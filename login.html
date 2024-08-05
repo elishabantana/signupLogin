@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+<body>
+    <h1>Login here</h1> 
+    <input type="text"  id="id4" placeholder="Enter your username">
+    <input type="password" id="id5" placeholder="Enter your password">
+    <button onclick="myLoginFunction()"> Login</button>
+    <p id="id6"></p>
+
+    
+    
+    
+</body>
+<script>
+    function myLoginFunction(){
+
+        let myUsername=document.getElementById("id4").value;
+        let myPassword=document.getElementById("id5").value;
+       
+        if(myUsername === localStorage.getItem("username") && myPassword === localStorage.getItem("password") ){
+            document.getElementById("id6").innerHTML="login successful";
+    
+        }else{
+            document.getElementById("id6").innerHTML="login failed, try again later.";
+        }
+        
+    
+        
+    }
+    
+</script>
+</html>
