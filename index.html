@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+</head>
+<body>
+    <h1>Signup here</h1>
+
+    <input type="text"  id="id1" placeholder="Enter your username" required>
+    <input type="password" id="id2" placeholder="Enter your password" required>
+    <button onclick="mySignupFunction()"> Submit</button>
+    <p id="id3"></p>
+    
+
+    <a href="login.html">To login, click here.</a>
+    
+</body>
+<script>
+    function myFunction() {
+ 
+}
+    function mySignupFunction(){
+        const inpObj1 = document.getElementById("id1");
+        const inpObj2 = document.getElementById("id2");
+  if (!inpObj1.checkValidity()) {
+    document.getElementById("id3").innerHTML = inpObj1.validationMessage;
+  } else 
+  if (!inpObj2.checkValidity()) {
+    document.getElementById("id3").innerHTML = inpObj2.validationMessage;
+  }
+  else{
+    let username=document.getElementById("id1").value;
+        let password=document.getElementById("id2").value;
+        localStorage.setItem("username",username);
+        localStorage.setItem("password",password);
+       document.getElementById("id3").innerHTML=username+" Signup successful."
+    
+  }
+       }
+</script>
+</html>
